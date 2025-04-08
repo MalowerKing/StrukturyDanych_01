@@ -39,7 +39,7 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
         MEASURE_SOMETHING(Lista.chosenElement(7)); \
-        MEASURE_SOMETHING(Lista.findSomething(8)); \
+        MEASURE_SOMETHING(Lista.findSomething(7)); \
         myfile << "\n"; \
         } \
         for(int i = 0; i < 40; i++) { \
@@ -52,12 +52,12 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.removeFirst()); \
         MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
         MEASURE_SOMETHING(Lista.removeLast()); \
-        MEASURE_SOMETHING(Lista.addToChosen(2137, 37)); \
-        MEASURE_SOMETHING(Lista.removeChosen(37)); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 35)); \
+        MEASURE_SOMETHING(Lista.removeChosen(35)); \
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
-        MEASURE_SOMETHING(Lista.chosenElement(37)); \
-        MEASURE_SOMETHING(Lista.findSomething(38)); \
+        MEASURE_SOMETHING(Lista.chosenElement(35)); \
+        MEASURE_SOMETHING(Lista.findSomething(35)); \
         myfile << "\n"; \
         } \
         for(int i = 0; i < 50; i++) { \
@@ -70,12 +70,12 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.removeFirst()); \
         MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
         MEASURE_SOMETHING(Lista.removeLast()); \
-        MEASURE_SOMETHING(Lista.addToChosen(2137, 67)); \
-        MEASURE_SOMETHING(Lista.removeChosen(67)); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 70)); \
+        MEASURE_SOMETHING(Lista.removeChosen(70)); \
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
-        MEASURE_SOMETHING(Lista.chosenElement(67)); \
-        MEASURE_SOMETHING(Lista.findSomething(50)); \
+        MEASURE_SOMETHING(Lista.chosenElement(45)); \
+        MEASURE_SOMETHING(Lista.findSomething(45)); \
         myfile << "\n"; \
         } \
         \
@@ -89,12 +89,12 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.removeFirst()); \
         MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
         MEASURE_SOMETHING(Lista.removeLast()); \
-        MEASURE_SOMETHING(Lista.addToChosen(2137, 377)); \
-        MEASURE_SOMETHING(Lista.removeChosen(377)); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 350)); \
+        MEASURE_SOMETHING(Lista.removeChosen(350)); \
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
-        MEASURE_SOMETHING(Lista.chosenElement(377)); \
-        MEASURE_SOMETHING(Lista.findSomething(100)); \
+        MEASURE_SOMETHING(Lista.chosenElement(350)); \
+        MEASURE_SOMETHING(Lista.findSomething(350)); \
         myfile << "\n"; \
         } \
         for(int i = 0; i < 500; i++) { \
@@ -107,11 +107,12 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.removeFirst()); \
         MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
         MEASURE_SOMETHING(Lista.removeLast()); \
-        MEASURE_SOMETHING(Lista.addToChosen(2137, 577)); \
-        MEASURE_SOMETHING(Lista.removeChosen(577)); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 700)); \
+        MEASURE_SOMETHING(Lista.removeChosen(700)); \
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
-        MEASURE_SOMETHING(Lista.chosenElement(300)); \
+        MEASURE_SOMETHING(Lista.chosenElement(700)); \
+        MEASURE_SOMETHING(Lista.findSomething(450)); \
         myfile << "\n"; \
         }        \
  \
@@ -126,11 +127,11 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.removeFirst()); \
         MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
         MEASURE_SOMETHING(Lista.removeLast()); \
-        MEASURE_SOMETHING(Lista.addToChosen(2137, 3777)); \
-        MEASURE_SOMETHING(Lista.removeChosen(3777)); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 3500)); \
+        MEASURE_SOMETHING(Lista.removeChosen(3500)); \
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
-        MEASURE_SOMETHING(Lista.chosenElement(3777)); \
+        MEASURE_SOMETHING(Lista.chosenElement(3500)); \
         MEASURE_SOMETHING(Lista.findSomething(3500)); \
         myfile << "\n"; \
         } \
@@ -146,12 +147,87 @@ ofstream myfile;
         MEASURE_SOMETHING(Lista.removeFirst()); \
         MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
         MEASURE_SOMETHING(Lista.removeLast()); \
-        MEASURE_SOMETHING(Lista.addToChosen(2137, 7777)); \
-        MEASURE_SOMETHING(Lista.removeChosen(7777)); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 7000)); \
+        MEASURE_SOMETHING(Lista.removeChosen(7000)); \
         MEASURE_SOMETHING(Lista.firstElement()); \
         MEASURE_SOMETHING(Lista.lastElement()); \
-        MEASURE_SOMETHING(Lista.chosenElement(7777)); \
-        MEASURE_SOMETHING(Lista.findSomething(4000)); \
+        MEASURE_SOMETHING(Lista.chosenElement(7000)); \
+        MEASURE_SOMETHING(Lista.findSomething(4500)); \
+        myfile << "\n"; \
+        } \
+ \
+        for(int i = 0; i < 40000; i++) { \
+                Lista.addToTheFront(i); \
+        } \
+        for(int i = 0; i < 100; i++) { \
+        myfile << "50000,"; \
+ \
+        MEASURE_SOMETHING(Lista.addToTheFront(2137)); \
+        MEASURE_SOMETHING(Lista.removeFirst()); \
+        MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
+        MEASURE_SOMETHING(Lista.removeLast()); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 35000)); \
+        MEASURE_SOMETHING(Lista.removeChosen(35000)); \
+        MEASURE_SOMETHING(Lista.firstElement()); \
+        MEASURE_SOMETHING(Lista.lastElement()); \
+        MEASURE_SOMETHING(Lista.chosenElement(35000)); \
+        MEASURE_SOMETHING(Lista.findSomething(35000)); \
+        myfile << "\n"; \
+        } \
+  \
+        for(int i = 0; i < 50000; i++) { \
+                Lista.addToTheFront(i); \
+        } \
+        for(int i = 0; i < 100; i++) { \
+        myfile << "100000,"; \
+ \
+        MEASURE_SOMETHING(Lista.addToTheFront(2137)); \
+        MEASURE_SOMETHING(Lista.removeFirst()); \
+        MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
+        MEASURE_SOMETHING(Lista.removeLast()); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 70000)); \
+        MEASURE_SOMETHING(Lista.removeChosen(70000)); \
+        MEASURE_SOMETHING(Lista.firstElement()); \
+        MEASURE_SOMETHING(Lista.lastElement()); \
+        MEASURE_SOMETHING(Lista.chosenElement(70000)); \
+        MEASURE_SOMETHING(Lista.findSomething(45000)); \
+        myfile << "\n"; \
+        } \
+  \
+        for(int i = 0; i < 400000; i++) { \
+                Lista.addToTheFront(i); \
+        } \
+        for(int i = 0; i < 100; i++) { \
+        myfile << "500000,"; \
+ \
+        MEASURE_SOMETHING(Lista.addToTheFront(2137)); \
+        MEASURE_SOMETHING(Lista.removeFirst()); \
+        MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
+        MEASURE_SOMETHING(Lista.removeLast()); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 140000)); \
+        MEASURE_SOMETHING(Lista.removeChosen(140000)); \
+        MEASURE_SOMETHING(Lista.firstElement()); \
+        MEASURE_SOMETHING(Lista.lastElement()); \
+        MEASURE_SOMETHING(Lista.chosenElement(140000)); \
+        MEASURE_SOMETHING(Lista.findSomething(350000)); \
+        myfile << "\n"; \
+        } \
+        for(int i = 0; i < 500000; i++) { \
+                Lista.addToTheFront(i); \
+        } \
+        for(int i = 0; i < 100; i++) { \
+        myfile << "1000000,"; \
+ \
+        MEASURE_SOMETHING(Lista.addToTheFront(2137)); \
+        MEASURE_SOMETHING(Lista.removeFirst()); \
+        MEASURE_SOMETHING(Lista.addToTheBack(2137)); \
+        MEASURE_SOMETHING(Lista.removeLast()); \
+        MEASURE_SOMETHING(Lista.addToChosen(2137, 280000)); \
+        MEASURE_SOMETHING(Lista.removeChosen(280000)); \
+        MEASURE_SOMETHING(Lista.firstElement()); \
+        MEASURE_SOMETHING(Lista.lastElement()); \
+        MEASURE_SOMETHING(Lista.chosenElement(280000)); \
+        MEASURE_SOMETHING(Lista.findSomething(450000)); \
         myfile << "\n"; \
         } \
         myfile.close();
