@@ -1,16 +1,17 @@
-#ifndef LISTA_JEDNOKIERUNKOWA_HPP
-#define LISTA_JEDNOKIERUNKOWA_HPP
+#ifndef LISTA_JEDNOKIERUNKOWA_TAIL_HPP
+#define LISTA_JEDNOKIERUNKOWA_TAIL_HPP
 
 #include <iostream>
 
 template <typename T>
-class ListaJednokierunkowa {
+class ListaJednokierunkowaTail {
 private:
         struct Node {
                 T data;
                 Node* next;
         };
 public:
+        Node* tail = nullptr;
         Node* start = nullptr;
 
         T firstElement() {
@@ -26,10 +27,7 @@ public:
                         std::cout << "Lista jest pusta";
                         return T(); // Return default-constructed value
                 }
-                Node* temp = start;
-                while(temp->next){
-                        temp = temp->next;
-                }
+                Node* temp = tail;
                 return temp->data;
         }
 
@@ -54,8 +52,11 @@ public:
 
         void addToTheFront(T value) {
                 Node* newNode = new Node();
-                newNode->data = value;
                 newNode->next = start;
+                newNode->data = value;
+                if(start == nullptr) {
+                        tail = newNode;        
+                }
                 start = newNode;
         }
 
@@ -64,13 +65,11 @@ public:
                 newNode->data = value;
                 newNode->next = nullptr;
                 if(!start) {
+                        tail = newNode;
                         start = newNode;
                         return;
                 }
-                Node* temp = start;
-                while(temp->next) {
-                        temp = temp->next;
-                }
+                Node* temp = tail;
                 temp->next = newNode;
         }
 
@@ -127,6 +126,7 @@ public:
 
                 delete temp->next;
                 temp->next = nullptr;
+                tail = temp;
         };
 
         void removeChosen(int i) {
@@ -153,7 +153,6 @@ public:
         temp->next = temp->next->next;   
         delete nodeToDelete;            
         };
-
         int findSomething(T something) {
                 Node* temp = start;
                 int position = 0;
@@ -164,8 +163,9 @@ public:
                 else {
                 std::cout << "Not found" << std::endl;
                 return 0;
-                }
+                };
         }
 };
 
 #endif // LISTA_JEDNOKIERUNKOWA_HPP
+

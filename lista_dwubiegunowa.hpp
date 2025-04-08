@@ -1,14 +1,15 @@
-#ifndef LISTA_JEDNOKIERUNKOWA_HPP
-#define LISTA_JEDNOKIERUNKOWA_HPP
+#ifndef LISTA_DWUKIERUNKOWA_HPP
+#define LISTA_DWUKIERUNKOWA_HPP
 
 #include <iostream>
 
 template <typename T>
-class ListaJednokierunkowa {
+class ListaDwukierunkowa {
 private:
         struct Node {
                 T data;
                 Node* next;
+                Node* prev;
         };
 public:
         Node* start = nullptr;
@@ -56,6 +57,7 @@ public:
                 Node* newNode = new Node();
                 newNode->data = value;
                 newNode->next = start;
+                newNode->prev = nullptr;
                 start = newNode;
         }
 
@@ -72,6 +74,7 @@ public:
                         temp = temp->next;
                 }
                 temp->next = newNode;
+                newNode->prev = temp;
         }
 
         void addToChosen(T value, int i) {
@@ -95,6 +98,7 @@ public:
                 }
                 newNode->next = temp->next;
                 temp->next = newNode;
+                newNode->prev = temp;
         }
 
         void removeFirst() {
@@ -105,6 +109,7 @@ public:
 
                 Node* temp = start;
                 start = start->next;
+                start->prev = nullptr;
                 delete temp;
         };
 
@@ -112,7 +117,7 @@ public:
                 if (!start) {
                         std::cout << "Lista jest pusta" << std::endl;
                         return;
-        }
+                }
 
                 if (!start->next) {
                         delete start;
@@ -121,12 +126,12 @@ public:
                 }
 
                 Node* temp = start;
-                while(temp->next->next) {
+                while(temp->next) {
                         temp = temp->next;
                 }
 
-                delete temp->next;
-                temp->next = nullptr;
+                temp->prev->next = nullptr;
+                delete temp;
         };
 
         void removeChosen(int i) {
@@ -141,7 +146,7 @@ public:
         }
 
         Node* temp = start;
-        for (int j = 1; j < i - 1 && temp; ++j) {
+        for (int j = 1; j < i && temp; ++j) {
             temp = temp->next;
         }
 
@@ -149,11 +154,11 @@ public:
                 std::cout << "Poza Lista." << std::endl;
                 return;
         }
-        Node* nodeToDelete = temp->next; 
-        temp->next = temp->next->next;   
+        Node* nodeToDelete = temp; 
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
         delete nodeToDelete;            
         };
-
         int findSomething(T something) {
                 Node* temp = start;
                 int position = 0;
@@ -169,3 +174,4 @@ public:
 };
 
 #endif // LISTA_JEDNOKIERUNKOWA_HPP
+
