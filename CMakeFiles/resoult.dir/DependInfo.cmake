@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/malower/Dokumenty/Studia/Struktury/Projekt_1/src/main.cpp" "CMakeFiles/resoult.dir/src/main.cpp.o" "gcc" "CMakeFiles/resoult.dir/src/main.cpp.o.d"
-  "" "resoult" "gcc" "CMakeFiles/resoult.dir/link.d"
+  "" "build/bin/resoult" "gcc" "CMakeFiles/resoult.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

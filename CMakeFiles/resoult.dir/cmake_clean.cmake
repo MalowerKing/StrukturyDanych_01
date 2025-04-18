@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/resoult.dir/link.d"
   "CMakeFiles/resoult.dir/src/main.cpp.o"
   "CMakeFiles/resoult.dir/src/main.cpp.o.d"
-  "resoult"
-  "resoult.pdb"
+  "build/bin/resoult"
+  "build/bin/resoult.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
